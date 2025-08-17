@@ -3,7 +3,7 @@ import "../../styles/RoutineListItem.css";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import cn from "classnames";
 import { apibase } from "../../config";
-import { TiThLarge } from "react-icons/ti";
+import { CurrentLocation } from "react-icons/bi";
 
 const ListItem = ({ RoutineData, onDelete }) => {
   const { title, location } = RoutineData;
