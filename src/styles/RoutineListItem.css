@@ -1,0 +1,29 @@
+.routineBox {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.checkBox {
+    margin : 10px;
+}
+
+h4 {
+    margin : 10px;
+    margin-left: 0;
+}
+
+.Location {
+    margin : 10px;
+}
+
+.checked {
+    background-color: blue;
+}
