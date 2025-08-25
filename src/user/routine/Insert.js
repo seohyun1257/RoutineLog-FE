@@ -81,6 +81,10 @@ const Insert = ({ onAdd, updateId }) => {
       alert("루틴 시간 차이가 10분 이상입니다.");
       return; // submit 중단
     }
+    if (endMinutes - startMinutes < 0) {
+      alert("루틴 체크 시작 시간이 종료 시간보다 빠릅니다.");
+      return; // submit 중단
+    }
 
     if (dayofWeek.length === 0) {
       alert("요일을 선택해주세요.");
@@ -209,10 +213,14 @@ const Insert = ({ onAdd, updateId }) => {
                   <button
                     key={day}
                     style={{
-                      backgroundColor: dayofWeek.includes(dayMap[day]) ? '#2E8B57' : '#f0f0f0',
-                      color: dayofWeek.includes(dayMap[day]) ? 'white' : 'black',
+                      backgroundColor: dayofWeek.includes(dayMap[day])
+                        ? "#2E8B57"
+                        : "#f0f0f0",
+                      color: dayofWeek.includes(dayMap[day])
+                        ? "white"
+                        : "black",
                       flexGrow: 1,
-                      border: '1px solid #2E8B57'
+                      border: "1px solid #2E8B57",
                     }}
                     onClick={(e) => {
                       e.preventDefault();
