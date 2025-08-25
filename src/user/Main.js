@@ -1,12 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import RoutineData from "./routine/RoutineData";
+import CurrentLocation from "./routine/CurrentLocation";
+import "../styles/MainStyle.css";
 
 const Main = () => {
   return (
-    <>
-      <RoutineData />
-    </>
+    <div className="main">
+      <CurrentLocation />
+    </div>
   );
 };
 

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #4a90e2;
+  --primary-hover-color: #357abd;
+  --background-color: #f0f2f5;
+  --form-background-color: #ffffff;
+  --text-color: #333333;
+  --label-color: #555555;
+  --input-border-color: #dcdcdc;
+  --input-focus-border-color: #4a90e2;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --link-color: #4a90e2;
+  --link-hover-color: #357abd;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.login {
+    background-color: var(--form-background-color);
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--box-shadow-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.login:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.login h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 35px;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--label-color);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.text_input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.text_input:focus {
+    outline: none;
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.toggle-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.toggle-link .link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.toggle-link .link:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}

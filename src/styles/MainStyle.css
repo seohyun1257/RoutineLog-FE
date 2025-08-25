@@ -1,0 +1,22 @@
+body {
+  background-color: #f5f5f5; /* 페이지 전체 배경 */
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  
+  display: flex;
+  justify-content: center; /* 좌우 중앙 */
+  align-items: center;     /* 위아래 중앙 */
+  padding: 4rem 1rem;      /* 스크롤 생겼을 때 위아래 여백 확보 */
+  box-sizing: border-box;
+}
+
+.main {
+  background-color: white; /* 카드 배경 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 그림자 */
+  border-radius: 16px;
+  padding: 100px 2rem;
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto; /* 가운데 정렬 */
+}

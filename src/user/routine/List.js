@@ -1,25 +1,23 @@
 import ListItem from "./ListItem";
-import { useState } from "react";
+import DayofWeek from "./DayofWeek";
 
-const List = ({ RoutineData, onDelete }) => {
-  if (
-    RoutineData.length === 0 ||
-    Object.keys(RoutineData[0]).length === 0 ||
-    !RoutineData
-  )
+const List = ({ data, selectedDate }) => {
+  if (!data || data.length === 0) {
     return null;
+  }
   return (
-    <>
-      <div>
-        {RoutineData.map((RoutineData) => (
-          <ListItem
-            key={String(RoutineData.id)}
-            RoutineData={RoutineData}
-            onDelete={onDelete}
-          />
-        ))}
-      </div>
-    </>
+    <div className="routine-container">
+      {data.map(
+        (item) =>
+          item && (
+            <ListItem
+              key={String(item.id)}
+              RoutineData={item}
+              selectedDate={selectedDate}
+            />
+          )
+      )}
+    </div>
   );
 };
 

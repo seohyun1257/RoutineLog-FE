@@ -1,0 +1,152 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slide-down 0.3s ease-out;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popup-content p {
+    margin: 0;
+    font-weight: 500;
+    color: black;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="time"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #2E8B57;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.popup-content input[type="text"]:focus,
+.popup-content input[type="time"]:focus {
+    outline: none;
+    border-color: #2E8B57;
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
+}
+
+.popup-content .flex {
+    display: flex;
+}
+
+.popup-content .gap-2 {
+    gap: 8px;
+}
+
+.popup-content .flex button {
+    flex-grow: 1;
+    background-color: #f0f0f0;
+    border: 1px solid #2E8B57;
+    color: black;
+}
+
+.popup-content .flex button.selected {
+    background-color: #2E8B57;
+    color: white;
+    border-color: #2E8B57;
+}
+
+.popup-content button {
+    background-color: #2E8B57;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.popup-content button:hover {
+    background-color: #25724A;
+    transform: translateY(-2px);
+}
+
+.popup-content .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: black;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.popup-content .close-button:hover {
+    color: black;
+}
+
+.popup-content .close-btn {
+    margin-top: 10px;
+}
+
+.add-routine-btn {
+    background-color: #2E8B57;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin : 0px 0px 10px 0px;
+}
+
+.add-routine-btn:hover {
+    background-color: #25724A;
+    transform: translateY(-2px);
+}

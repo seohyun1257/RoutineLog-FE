@@ -1,0 +1,67 @@
+.routineBox {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
+}
+
+.routineBox.checked {
+    background-color: #f0f0f0;
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.checkBox {
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 24px; /* 아이콘 크기 조정 */
+    color: #2E8B57; /* 기본 체크박스 색상 */
+}
+
+.routineBox.checked .checkBox {
+    color: #aaa; /* 완료 시 체크박스 색상 */
+}
+
+.routineBox h4 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.Location {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+.title-location-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 15px;
+}
+
+.remove {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.remove:hover {
+    background-color: #ffe5e5;
+}
+
+.routine-container {
+    background-color: #e6f4ea; /* 옅은 초록색 */
+    padding: 20px 20px 15px 20px;
+    border-radius: 15px;
+}

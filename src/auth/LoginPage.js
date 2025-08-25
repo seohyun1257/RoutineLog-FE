@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/loginsign.css";
+import "../styles/LoginPageStyle.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { apibase } from "../config";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -12,7 +11,7 @@ const LoginPage = () => {
   const Login = (e) => {
     e.preventDefault();
 
-    fetch(`${apibase}/auth/login`, {
+    fetch(`${process.env.REACT_APP_SERVER_API}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // content type은 json이다.
@@ -30,7 +29,6 @@ const LoginPage = () => {
         const accessToken = data.accessToken;
         if (accessToken) {
           localStorage.setItem("token", accessToken);
-          console.log("token");
         }
 
         console.log("로그인 성공:", data);

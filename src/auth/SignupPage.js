@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/loginsign.css";
+import "../styles/SignupPageStyle.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { apibase } from "../config";
 
 const SignupPage = () => {
   const [username, setUsername] = useState("");
@@ -12,7 +11,7 @@ const SignupPage = () => {
   const Signup = (e) => {
     e.preventDefault();
 
-    fetch(`${apibase}/auth/signup`, {
+    fetch(`${process.env.REACT_APP_SERVER_API}/auth/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // content type은 json이다.
@@ -71,7 +70,7 @@ const SignupPage = () => {
           <label htmlFor="login-password">비밀번호 확인</label>
           <div className="input-group">
             <input
-              type="re-password"
+              type="password"
               id="re-password"
               name="re-password"
               className="text_input"

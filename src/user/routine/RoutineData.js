@@ -1,21 +1,10 @@
 import List from "./List";
 import Insert from "./Insert";
+import { ActionsProvider } from "../ActionContext";
 import { useState, useEffect, useCallback } from "react";
-import { apibase } from "../../config";
 
-const RoutineData = () => {
-  const [data, setData] = useState([
-    {
-      id: 1,
-      title: "운동",
-      location: "헬스장",
-    },
-    {
-      id: 2,
-      title: "독서",
-      location: "정석학술정보관",
-    },
-  ]);
+const RoutineData = ({ selectedDate, lastPoint }) => {
+  const [data, setData] = useState([]);
 
   const addRoutine = (newRoutine) => {
     setData((prevList) => [...prevList, newRoutine]);
@@ -33,29 +22,47 @@ const RoutineData = () => {
     setData((prevData) => prevData.filter((routine) => routine.id !== id));
   }, []);
 
+  const formatDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // 0~11 → 1~12
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    fetch(`${apibase}/api/v1/routines`, {
-      // GET 요청
-      headers: {
-        Authorization: `${token}`,
-      },
-    })
-      .then((res) => {
+    const startDate = formatDate(new Date(selectedDate));
+
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const res = await fetch(
+          `${process.env.REACT_APP_SERVER_API}/api/v1/routines?date=${startDate}`,
+          {
+            // GET 요청
+            headers: {
+              Authorization: `${token}`,
+            },
+          }
+        );
+
         if (!res.ok) throw new Error("Network response was not ok");
-        return res.json(); // JSON 문자열 → JS 객체
-      })
-      .then((jsonData) => {
-        console.log(jsonData);
+        const jsonData = await res.json(); // JSON 문자열 → JS 객체
+
         setData(jsonData); // 상태에 객체 저장
-      })
-      .catch((err) => console.error(err));
-  }, []);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchData();
+  }, [selectedDate]);
 
   return (
     <>
-      <Insert onAdd={addRoutine} updateId={updateId} />
-      <List RoutineData={data} onDelete={onDelete} />
+      <ActionsProvider onDelete={onDelete}>
+        <Insert onAdd={addRoutine} updateId={updateId} />
+        <List data={data} selectedDate={selectedDate} />
+      </ActionsProvider>
     </>
   );
 };
