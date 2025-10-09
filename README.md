@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+루틴로그 (프로토타입)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+👥 담당자
+역할	이름/프로필
+FE	@fe-dev
+BE	@luna111122
+사용자의 루틴을 일관되게 기록하고, 동기부여/회고를 통해 성장을 돕는 웹 기반 루틴 기록 플랫폼 상태: 🚧 Prototype · 기능 점진 개발 중
 
-## Available Scripts
+🔗 라이브 데모
 
-In the project directory, you can run:
+URL: https://www.routinelog.site/
 
-### `npm start`
+📌 프로젝트 개요
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+목적 사용자의 루틴을 일관되게 기록하고, 동기부여와 회고를 통해 성장할 수 있도록 돕는 웹 기반 루틴 기록 플랫폼
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+핵심 컨셉
 
-### `npm test`
+집에서는 아무것도 못하는 사람들을 위한 루틴 기록 서비스
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+환경이 바뀌면 생각/행동도 바뀐다
 
-### `npm run build`
+핵심 아이디어
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+위치 기반 루틴 체크: 특정 장소 근접 시 자동 알림/체크
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🧩 주요 기능
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+루틴 등록/관리
+루틴명, 카테고리, 주기(매일/주 N회) 설정
 
-### `npm run eject`
+위치 기반 옵션 선택 가능
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+루틴 수행 체크
+수동 체크 / 위치 기반 자동 체크 / 반복 설정
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🧭 위치 기반 루틴 체크
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+도서관·헬스장 등 등록 장소 도착 시 자동 팝업 알림
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Geolocation API + 좌표 반경(예: 100m) 기반 인식
 
-## Learn More
+ℹ️ 브라우저 지오로케이션은 HTTPS + 사용자 동의가 필수이며, 일부 모바일 브라우저에서 백그라운드 동작에 제약이 있을 수 있습니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🛠 기술 스택
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Frontend: React (CRA)
 
-### Code Splitting
+Backend: Spring Boot (Java), REST API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+DB: MySQL
 
-### Analyzing the Bundle Size
+Infra (AWS): CloudFront, S3(정적 호스팅), ALB, EC2, RDS(MySQL), ACM(SSL)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+기타: Geolocation API
 
-### Making a Progressive Web App
+☁️ AWS 아키텍처
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+image
+참고
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+배포는 진행 중인 프로토타입 단계이며, 인프라/보안/모니터링은 점진적으로 보강됩니다.
